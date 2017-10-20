@@ -27,6 +27,7 @@ function RoomCtrl($http, $interval, $stateParams) {
     };
 
     $interval(vm.get_data, 10000);
+    vm.get_data();
 
     vm.add_comment = function() {
         if (vm.message && vm.nickname && vm.data){
@@ -34,8 +35,8 @@ function RoomCtrl($http, $interval, $stateParams) {
             $http.get(API_PREFIX + args).then(function(response) {
                 if (response.data) {
                     vm.get_data()
-                    $("#nickname").attr('disabled', true)
                     vm.message = "";
+                    $("#nickname").attr('disabled', true)
                 }
             });
         }
