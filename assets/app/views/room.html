@@ -5,14 +5,14 @@
     </div>
     <div class="row" style="padding: 20px 0">
         <div class="col-sm-9">
-            <h2>{{ctrl.data.name}}</h2>
+            <h2>{{ ctrl.data.name }}</h2>
         </div>
         <div class="col-sm-9" style="max-height: 600px;overflow-y: scroll;">
             <div ng-repeat="item in ctrl.data.items">
-                <h6>{{item.nickname}}
-                    <small>at: {{item.at}}</small>
+                <h6>{{ item.nickname }}
+                    <small>at: {{ item.at }}</small>
                 </h6>
-                <p>{{item.message}}</p>
+                <p>{{ item.message }}</p>
                 <hr>
             </div>
         </div>
@@ -23,11 +23,11 @@
 
     <div class="row">
         <div class="col-sm-9">
-            <input type="text" class="form-control" ng-model="ctrl.nickname" id="nickname" style="max-width:100%" placeholder="Enter nickname">
+            <input type="text" class="form-control" ng-model="ctrl.context.nickname" id="nickname" style="max-width:100%" placeholder="Enter nickname">
             <br>
-            <textarea class="form-control" ng-model="ctrl.message" style="max-width:100%" placeholder="Message"></textarea>
+            <textarea class="form-control" ng-model="ctrl.context.message" style="max-width:100%" placeholder="Message"></textarea>
             <br>
-            <button class="btn btn-success pull-right" ng-click="ctrl.add_comment()" ng-disable="!ctrl.data">Add comment</button>
+            <button class="btn btn-success pull-right" ng-click="ctrl.addComment()" ng-disable="!ctrl.data">Add comment</button>
         </div>
     </div>
 </div>
