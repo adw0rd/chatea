@@ -22,10 +22,10 @@ function MainCtrl ($http) {
 function RoomCtrl($http, $interval, $stateParams) {
     var vm = this;
     vm.data = {}
-    vm.roomname = $stateParams.name;
-    vm.context = {roomname: vm.roomname}
+    vm.roomid = $stateParams.id;
+    vm.context = {roomid: vm.roomid}
     vm.getData = function () {
-        $http.get(API_PREFIX + 'getRoom', {params: {roomname: vm.roomname}}).then(function (response) {
+        $http.get(API_PREFIX + 'getRoom', {params: {roomid: vm.roomid}}).then(function (response) {
             vm.data = response.data;
         });
     };

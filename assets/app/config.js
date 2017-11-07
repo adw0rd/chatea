@@ -8,7 +8,7 @@ function configState($stateProvider, $urlRouterProvider, $compileProvider) {
             data: {pageTitle: 'Chatea'}
         })
         .state('room', {
-            url: "/room/:name",
+            url: "/room/:id",
             templateUrl: "/chatea/assets/app/views/room.html",
             data: {pageTitle: 'Room'}
         });
